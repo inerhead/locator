@@ -11,12 +11,12 @@ class CustomWidgetNavBar extends StatelessWidget {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.list_alt_outlined),
           label: 'Pedidos',
           backgroundColor: Colors.red,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.business),
+          icon: Icon(Icons.history),
           label: 'Historial',
           backgroundColor: Colors.green,
         ),

@@ -9,24 +9,33 @@ import 'package:provider/provider.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final providerdata = Provider.of<UIProvider>(context);
+    final currentStateColorNotify = providerdata.colorNotify;
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[400],
+        backgroundColor: currentStateColorNotify,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          tooltip: 'Menu',
+          onPressed: () {},
+        ),
         centerTitle: true,
         title: Text('Localizador Virtual'),
         elevation: 1,
-        actions: [
-          IconButton(
-            onPressed: () {
-              print('Buttom REFRESH');
-            },
-            icon: Icon(Icons.refresh_sharp),
-          )
-        ],
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(250.0),
+            bottomRight: Radius.circular(250.0),
+          ),
+        ),
+        bottom: PreferredSize(
+          child: SizedBox(),
+          preferredSize: Size.fromHeight(150.0),
+        ),
       ),
       body: _HomePage(),
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: CustomWidgetFloatingButtom(),
       bottomNavigationBar: CustomWidgetNavBar(),
     );
